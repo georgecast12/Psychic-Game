@@ -1,51 +1,74 @@
 
 
 
-
-// Random Letter (Lower & Upper Cap)
-
-function randomLetter(length) {
-    var text = "";
-    var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-    for (var i = 0; i < length; i++)
-        text += letters.charAt(Math.floor(Math.random() * letters.length));
-
-    return text;
-
-}
-
-console.log(randomLetter(1));
-
-// Variables to hold letter and outcomes
-
+//Variables that hold initial values and letter options
 var wins = 0;
 var losses = 0;
-var countdown = 9;
-var letter = " ";
+var guessesLeft = 9;
+var userGuess = " ";
+var computerGuess = " ";
+var guesses
+var letterOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+var computerOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+//Create variables that reference div to HMTL
+
+var winsRecordText = document.getElementById("wins-Record");
+var lossRecordText = document.getElementById("loss-Record");
+var attemptsCountdownText = document.getElementById("attempts-Countdown");
+var attemptsRecordText = document.getElementById("attempts-Record");
+
+// Randomly chooses a choice from the options array. This is the Computer's guess.
+var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+console.log(computerGuess)
+
+
+document.onkeyup = function (event) {
+
+    // Determines which key was pressed by user
+    var userGuess = event.key;
+    console.log(userGuess)
+
+    // Only run the following code block if the user presses "r" or "p" or "s".
+    if (userGuess === computerGuess) {
+        wins++;
+        guessesLeft = 9;
+        computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+        document.getElementById("loss-Record").innerHTML = "Losses: " + losses;
+        document.getElementById("wins-Record").innerHTML = "Wins: " + wins++;
+        document.getElementById("attempts-Countdown").innerHTML = "Guesses left:" + guessesLeft;
+
+
+        console.log(wins)
+
+    }
+
+    else if ((userGuess !== computerGuess) && (guessesLeft < 10) && (guessesLeft > 0)) {
+        guessesLeft--;
+        document.getElementById("attempts-Countdown").innerHTML = "Guesses left: " + guessesLeft;
+        document.getElementById("attempts-Record").innerHTML = "Your Guesses So Far:  " + userGuess + ",";
+        document.getElementById("loss-Record").innerHTML = "Losses: " + losses;
+        document.getElementById("wins-Record").innerHTML = "Wins: " + wins;
+    }
+
+    if (userGuess !== computerGuess && guessesLeft === 0) {
+        losses++;
+        guessesLeft = 9;
+        document.getElementById("attempts-Countdown").innerHTML = "Guesses left: " + guessesLeft;
+        document.getElementById("loss-Record").innerHTML = "Losses: " + losses;
+        document.getElementById("attempts-Record").innerHTML = "Your Guesses So Far:";
+        document.getElementById("wins-Record").innerHTML = "Wins: " + wins;
+        console.log(losses)
+
+
+    }
 
 
 
-// On key down compare letter to random letter.
-
-
-function myFunction() {
-    var x = document.getElementById("fname").value;
-    document.getElementById("demo").innerHTML = x;
-}
-
-
-    // if pressed letter = random letter add 1 to your guesses so far
-
-
-
-    //  else add 1 to guesses left (start @9).
-
-    // if guesses left =0  add 1 to Losses 
-
-    // your guesses so far  = register the attempts until you either win  or loose.
 
 
 
 
+
+};
 

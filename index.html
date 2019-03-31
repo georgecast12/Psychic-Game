@@ -5,59 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <!-- Bootstrap CSS Link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Css link -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <!-- link to JS -->
-
-
-
+    <title>Psychic Game</title>
 
 </head>
+<!-- Bootstrap CSS Link -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<!-- Css link -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-<div class="jumbotron">
-
-    <h1 class="text-center">Psychic Game</h1>
-
-    <div class="text-center">
-        <hr>
-
-        <br>
-        <h3 class="text">Guess what letter I'm thinking of</h3>
-
-        <body>
-
-            <div class="text" id="random-letter"></div>
-
-            <div class="text" id="winRecord"> Wins :</div>
-            <div class="text" id="lossRecord"> Loss :</div>
-            <div class="text" id="attemptCountdown"> Guesses Left :</div>
-            <div class="text" id="attemptRecord"> Your Guesses So Far :</div>
-
-
-            <!-- JS Link -->
+<!-- link to JS -->
+<script src="assets/javascript/game.js"> </script>
 
 
 
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Psychic Game</h1>
+    </div>
 
-            <!-- Bootstrap JS Links -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
+    <div class="text">Guess what letter I'm thinking of</div>
 
-        </body>
+    <!-- Wins : -->
+    <div class="text" id="wins-Record"></div>
+
+    <!-- Loss : -->
+    <div class="text" id="loss-Record"></div>
+
+    <!-- Guesses Left : -->
+    <div class="text" id="attempts-Countdown"></div>
+
+    <!-- Your Guesses So Far : -->
+    <div class="text" id="attempts-Record"></div>
+
+</body>
 
 </html>
