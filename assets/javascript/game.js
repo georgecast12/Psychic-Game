@@ -22,13 +22,14 @@ var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.l
 console.log(computerGuess)
 
 
-
+//Activates the game functions by pressing any key
 document.onkeydown = function (event) {
 
     // Determines which key was pressed by user
     var userGuess = event.key;
     console.log(userGuess)
 
+    //shows variables from load of html
     document.getElementById("loss-Record").innerHTML = "Losses: " + losses;
     document.getElementById("wins-Record").innerHTML = "Wins: " + wins;
     document.getElementById("attempts-Countdown").innerHTML = "Guesses left: " + guessesLeft;
@@ -44,7 +45,7 @@ document.onkeydown = function (event) {
 
     else if ((userGuess !== computerGuess) && (guessesLeft < 10) && (guessesLeft > 0)) {
         guessesLeft--;
-        document.getElementById("attempts-Record").appendChild("Your Guesses So Far:" + userGuess);
+        // document.getElementById("attempts-Record").appendChild("Your Guesses So Far:" + userGuess);
 
     }
 
