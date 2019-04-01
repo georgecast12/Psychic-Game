@@ -22,6 +22,7 @@ var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.l
 console.log(computerGuess)
 
 
+
 document.onkeydown = function (event) {
 
     // Determines which key was pressed by user
@@ -43,6 +44,7 @@ document.onkeydown = function (event) {
 
     else if ((userGuess !== computerGuess) && (guessesLeft < 10) && (guessesLeft > 0)) {
         guessesLeft--;
+        document.getElementById("attempts-Record").appendChild("Your Guesses So Far:" + userGuess);
 
     }
 
